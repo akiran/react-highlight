@@ -28,7 +28,7 @@ Code snippet that requires syntax highlighting should be passed as children to H
 ```
 
 #### Syntax highlighting of mutiple code snippets
-Set innerHTML=true to highlight multiple code snippets at a time.
+Set `innerHTML=true` to highlight multiple code snippets at a time.
 This is especially usefull if html with multiple code snippets is generated from preprocesser tools like markdown.
 
 **Warning:** If innerHTML is set to true, make sure the html generated with code snippets is from trusted source.
