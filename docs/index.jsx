@@ -1,60 +1,7 @@
-/**
- * @jsx React.DOM
- */
-
 var React = require('react');
-var Highlight = require('../index');
-var htmlmd = require('./snippets/html.md');
-var htmltxt = require('raw!./snippets/html.txt');
-var multiline = require('multiline');
+var Router = require('react-router');
+var routes = require('./routes');
 
-var str = multiline.stripIndent(function(){/*
-<!doctype html>
-<html>
-  <body>
-    <h1>❤ unicorns</h1>
-  </body>
-</html>
-*/});
-
-var inner = multiline.stripIndent(function(){/*
-<h1> Js </h1>
-<pre><code class='language-js'>var a, b = 1, c = 2;
-a = b + c;
-</pre></code>
-<h1> css </h1>
-<pre><code class='language-css'>body {
-  background: red;
-} 
-</pre></code>
-*/});
-
-var multistr = "";
-multistr += "<div> some text</div>\n";
-multistr += "<div> some text</div>\n";
-
-
-var Docs = React.createClass({
-  render: function () {
-    return (
-      <div>
-        <p>html</p>
-        <Highlight>
-          {htmltxt}
-        </Highlight>
-        <Highlight className='html'>
-          {str}
-        </Highlight>
-        <Highlight innerHTML={true} >
-          {inner}
-        </Highlight>
-        <Highlight className='html'>
-          {multistr}
-        </Highlight>
-
-      </div>
-    );
-  }
+Router.run(routes, function (Handler) {
+  React.render(<Handler />, document.body);
 });
-
-React.render(<Docs />, document.body);

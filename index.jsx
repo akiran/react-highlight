@@ -2,6 +2,12 @@ var hljs = require('highlight.js');
 var React = require('react');
 
 var Highlight = React.createClass({
+  getDefaultProps: function () {
+    return {
+      innerHTML: false,
+      className: ""
+    };
+  },
   componentDidMount: function () {
     var domNode = this.getDOMNode();
     var nodes = domNode.querySelectorAll('pre code');

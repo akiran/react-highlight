@@ -20,7 +20,6 @@ Choose the [theme](https://highlightjs.org/static/demo/) for syntax highlighting
 
 #### Syntax highlighting of single code snippet
 Code snippet that requires syntax highlighting should be passed as children to Highlight component in string format. Language name of code snippet should be specified as className.
-Highlight component wraps the code snippet with pre and code tags and adds necessary markup for syntax highlighting.
 
 ```html
 <Highlight className='language-name-of-snippet'>
@@ -31,7 +30,8 @@ Highlight component wraps the code snippet with pre and code tags and adds neces
 #### Syntax highlighting of mutiple code snippets
 Set innerHTML=true to highlight multiple code snippets at a time.
 This is especially usefull if html with multiple code snippets is generated from preprocesser tools like markdown.
-**Warning:** If innerHTML is set to true, make sure the html generated for syntax highlighting is from trusted source.
+
+**Warning:** If innerHTML is set to true, make sure the html generated with code snippets is from trusted source.
 
 ```html
 <Highlight innerHTML={true}>
