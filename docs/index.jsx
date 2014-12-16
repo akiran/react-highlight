@@ -29,6 +29,11 @@ a = b + c;
 </pre></code>
 */});
 
+var multistr = "";
+multistr += "<div> some text</div>\n";
+multistr += "<div> some text</div>\n";
+
+
 var Docs = React.createClass({
   render: function () {
     return (
@@ -43,6 +48,10 @@ var Docs = React.createClass({
         <Highlight innerHTML={true} >
           {inner}
         </Highlight>
+        <Highlight className='html'>
+          {multistr}
+        </Highlight>
+
       </div>
     );
   }
