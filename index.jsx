@@ -1,0 +1,23 @@
+var hljs = require('highlight.js');
+var React = require('react');
+
+var Highlight = React.createClass({
+  componentDidMount: function () {
+    var domNode = this.getDOMNode();
+    var nodes = domNode.querySelectorAll('pre code');
+    if (nodes.length > 0) {
+      for (var i = 0; i < nodes.length; i=i+1) {
+        hljs.highlightBlock(nodes[i]);
+      }
+    }
+  },
+  render: function () {
+    if (this.props.innerHTML) {
+      return <div dangerouslySetInnerHTML={{__html: this.props.children}}></div>;
+    } else {
+      return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
+    }
+  }
+});
+
+module.exports = Highlight;

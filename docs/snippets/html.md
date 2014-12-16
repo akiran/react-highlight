@@ -1,0 +1,5 @@
+```html
+<div>
+  <p> Highlighting this html snippet </p>
+</div>
+```
