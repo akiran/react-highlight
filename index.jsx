@@ -9,6 +9,12 @@ var Highlight = React.createClass({
     };
   },
   componentDidMount: function () {
+    this.highlightCode();
+  },
+  componentDidUpdate: function () {
+    this.highlightCode();
+  },
+  highlightCode: function () {
     var domNode = this.getDOMNode();
     var nodes = domNode.querySelectorAll('pre code');
     if (nodes.length > 0) {
