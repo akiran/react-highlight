@@ -2,7 +2,7 @@
   "name": "react-highlight",
   "version": "0.3.0",
   "description": "React component for syntax highlighting",
-  "main": "index.js",
+  "main": "index.jsx",
   "scripts": {
     "start": "./node_modules/.bin/gulp server"
   },
@@ -43,5 +43,8 @@
   "peerDependencies": {
     "highlight.js": "^8.4.x",
     "react": "*"
+  },
+  "browserify": {
+    "transform": "reactify"
   }
 }
