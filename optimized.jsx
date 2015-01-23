@@ -16,6 +16,10 @@ var Highlight = React.createClass({
     this.highlightCode();
   },
   highlightCode: function () {
+    var languages = this.props.languages;
+    if ((languages.length === 0) && this.props.className) {
+      languages.push(this.props.className);
+    }
     this.props.languages.forEach(function (lang) {
       hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
     });
