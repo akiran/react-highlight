@@ -18,6 +18,8 @@ Choose the [theme](https://highlightjs.org/static/demo/) for syntax highlighting
   <link rel="stylesheet" href="/path/to/styles/theme-name.css">
 ```
 
+The styles will most likely be in `node_modules/highlight.js/styles` folder.
+
 #### Syntax highlighting of single code snippet
 Code snippet that requires syntax highlighting should be passed as children to Highlight component in string format. Language name of code snippet should be specified as className.
 
