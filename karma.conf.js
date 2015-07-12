@@ -31,7 +31,11 @@ module.exports = function(config) {
     },
 
     webpack: {
-
+        module: {
+            loaders: [
+                {test: /\.(js|jsx)$/, loaders: ['babel']}
+            ]
+        }
     },
 
 
