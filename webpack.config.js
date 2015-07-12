@@ -13,12 +13,12 @@ module.exports = {
   },
   module: {
     loaders: [
-      {test: /\.(js|jsx)$/, loaders: ['react-hot', 'jsx']},
-      {
-        test: /\.scss$/,
-        loader: "style!css!postcss!sass?outputStyle=expanded&includePaths[]=" + 
-            (path.resolve(__dirname, './node_modules')) + "&includePaths[]=" + (path.resolve(__dirname, './bower_components'))
-      },
+      {test: /\.(js|jsx)$/, loaders: ['babel']},
+      // {
+      //   test: /\.scss$/,
+      //   loader: "style!css!postcss!sass?outputStyle=expanded&includePaths[]=" + 
+      //       (path.resolve(__dirname, './node_modules')) + "&includePaths[]=" + (path.resolve(__dirname, './bower_components'))
+      // },
       { test: /\.md$/, loader: "raw!markdown" },
     ],
   },
