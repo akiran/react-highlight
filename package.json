@@ -4,7 +4,8 @@
   "description": "React component for syntax highlighting",
   "main": "index.jsx",
   "scripts": {
-    "start": "./node_modules/.bin/gulp server"
+    "start": "./node_modules/.bin/gulp server",
+    "prepublish": "./node_modules/.bin/babel ./src --out-dir ./lib"
   },
   "repository": {
     "type": "git",
@@ -39,13 +40,11 @@
     "sass-loader": "^0.3.1",
     "style-loader": "^0.8.2",
     "webpack": "^1.4.13",
-    "webpack-dev-server": "^1.6.6"
+    "webpack-dev-server": "^1.6.6",
+    "babel": "^5.6.14"
   },
   "peerDependencies": {
     "highlight.js": "^8.4.x",
     "react": "*"
-  },
-  "browserify": {
-    "transform": "reactify"
   }
 }
