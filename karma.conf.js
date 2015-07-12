@@ -15,6 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+        'node_modules/es5-shim/es5-shim.js',
+        'node_modules/react/dist/react-with-addons.js',
         'test/**/*.jsx',
     ],
 
@@ -35,7 +37,14 @@ module.exports = function(config) {
             loaders: [
                 {test: /\.(js|jsx)$/, loaders: ['babel']}
             ]
+        },
+        externals: {
+            react: 'React'
         }
+    },
+    webpackServer: {
+      quiet: true,
+      // noInfo: true,
     },
 
 

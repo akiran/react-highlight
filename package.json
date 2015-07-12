@@ -6,7 +6,8 @@
   "scripts": {
     "start": "./node_modules/.bin/gulp server",
     "prepublish": "./node_modules/.bin/babel ./src --out-dir ./lib",
-    "test": "./node_modules/.bin/karma start --single-run"
+    "test": "./node_modules/.bin/karma start --single-run",
+    "dev-test": "./node_modules/.bin/karma start"
   },
   "repository": {
     "type": "git",
@@ -31,9 +32,10 @@
     "babel-core": "^5.6.18",
     "babel-loader": "^5.3.1",
     "css-loader": "^0.9.0",
+    "es5-shim": "^4.1.7",
     "gulp": "^3.8.10",
     "gulp-ruby-sass": "^0.7.1",
-    "highlight.js": "^8.4.x",
+    "highlight.js": "^8.6.0",
     "html-loader": "^0.2.3",
     "jasmine-core": "^2.3.4",
     "jsx-loader": "^0.12.2",
@@ -46,7 +48,7 @@
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.17",
     "raw-loader": "^0.5.1",
-    "react": "*",
+    "react": "^0.13.3",
     "react-hot-loader": "^0.5.0",
     "sass-loader": "^0.3.1",
     "style-loader": "^0.8.2",

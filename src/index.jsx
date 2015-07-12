@@ -5,7 +5,7 @@ var Highlight = React.createClass({
   getDefaultProps: function () {
     return {
       innerHTML: false,
-      className: ""
+      className: null
     };
   },
   componentDidMount: function () {
