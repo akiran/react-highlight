@@ -1,6 +1,8 @@
 # react-highlight
 React component for syntax highlighting using highlight.js
 
+[![Build Status](https://travis-ci.org/akiran/react-highlight.svg?branch=master)]
+
 ### Installation
 ```bash
   npm install react-highlight --save
