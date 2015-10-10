@@ -1,8 +1,8 @@
 {
   "name": "react-highlight",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "React component for syntax highlighting",
-  "main": "index.jsx",
+  "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp server",
     "prepublish": "./node_modules/.bin/babel ./src --out-dir ./lib",
