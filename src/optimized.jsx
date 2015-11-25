@@ -1,5 +1,6 @@
 var hljs = require('highlight.js/lib/highlight');
 var React = require('react');
+var ReactDOM = require('react-dom');
 
 var Highlight = React.createClass({
   getDefaultProps: function () {
@@ -23,7 +24,7 @@ var Highlight = React.createClass({
     this.props.languages.forEach(function (lang) {
       hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
     });
-    var domNode = this.getDOMNode();
+    var domNode = ReactDOM.getDOMNode();
     var nodes = domNode.querySelectorAll('pre code');
     if (nodes.length > 0) {
       for (var i = 0; i < nodes.length; i=i+1) {
