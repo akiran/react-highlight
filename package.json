@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp server",
-    "prepublish": "./node_modules/.bin/babel ./src --out-dir ./lib",
+    "build": "./node_modules/.bin/babel ./src --out-dir ./lib",
     "test": "./node_modules/.bin/karma start --single-run",
     "dev-test": "./node_modules/.bin/karma start"
   },
