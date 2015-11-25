@@ -16,7 +16,7 @@ var Highlight = React.createClass({
     this.highlightCode();
   },
   highlightCode: function () {
-    var domNode = ReactDOM.getDOMNode();
+    var domNode = ReactDOM.findDOMNode(this);
     var nodes = domNode.querySelectorAll('pre code');
     if (nodes.length > 0) {
       for (var i = 0; i < nodes.length; i=i+1) {

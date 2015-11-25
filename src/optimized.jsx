@@ -24,7 +24,7 @@ var Highlight = React.createClass({
     this.props.languages.forEach(function (lang) {
       hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
     });
-    var domNode = ReactDOM.getDOMNode();
+    var domNode = ReactDOM.findDOMNode(this);
     var nodes = domNode.querySelectorAll('pre code');
     if (nodes.length > 0) {
       for (var i = 0; i < nodes.length; i=i+1) {
