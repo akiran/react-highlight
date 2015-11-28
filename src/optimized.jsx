@@ -6,6 +6,7 @@ var Highlight = React.createClass({
   getDefaultProps: function () {
     return {
       innerHTML: false,
+      propsHTML: false,
       className: "",
       languages: []
     };
@@ -35,9 +36,13 @@ var Highlight = React.createClass({
   render: function () {
     if (this.props.innerHTML) {
       return <div dangerouslySetInnerHTML={{__html: this.props.children}} className={this.props.className || null}></div>;
-    } else {
-      return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
     }
+
+    if(this.props.propsHTML) {
+      return <div className={this.props.className || null}>{this.props.children}</div>;
+    }
+
+    return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
   }
 });
 
