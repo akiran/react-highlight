@@ -1,6 +1,6 @@
 {
   "name": "react-highlight",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "React component for syntax highlighting",
   "main": "index.js",
   "scripts": {
@@ -47,17 +47,16 @@
     "raw-loader": "^0.5.1",
     "react": "^0.14.0",
     "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.6.6"
+    "webpack-dev-server": "^1.6.6",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "react-addons-test-utils": "^0.14.3"
   },
   "peerDependencies": {
     "highlight.js": "^8.4.x",
-    "react": "^0.14.0"
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   },
   "dependencies": {
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.1",
-    "react": "^0.14.3",
-    "react-addons-test-utils": "^0.14.3",
-    "react-dom": "^0.14.3"
   }
 }
