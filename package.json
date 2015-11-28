@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/gulp server",
-    "prepublish": "./node_modules/.bin/babel ./src --out-dir ./lib",
+    "preinstall": "./node_modules/.bin/babel ./src --out-dir ./lib",
     "test": "./node_modules/.bin/karma start --single-run",
     "dev-test": "./node_modules/.bin/karma start"
   },
@@ -38,21 +38,26 @@
     "html-loader": "^0.2.3",
     "jasmine-core": "^2.3.4",
     "jsx-loader": "^0.12.2",
-    "karma": "^0.12.37",
-    "karma-jasmine": "^0.3.6",
-    "karma-phantomjs-launcher": "^0.2.0",
-    "karma-webpack": "^1.5.1",
+    "karma": "^0.13.3",
+    "karma-webpack": "^1.7.0",
     "markdown-loader": "^0.1.2",
     "multiline": "^1.0.1",
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.17",
     "raw-loader": "^0.5.1",
-    "react": "^0.13.3",
-    "webpack": "^1.10.1",
+    "react": "^0.14.0",
+    "webpack": "^1.12.2",
     "webpack-dev-server": "^1.6.6"
   },
   "peerDependencies": {
     "highlight.js": "^8.4.x",
-    "react": "*"
+    "react": "^0.14.0"
+  },
+  "dependencies": {
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "react": "^0.14.3",
+    "react-addons-test-utils": "^0.14.3",
+    "react-dom": "^0.14.3"
   }
 }
