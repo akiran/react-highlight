@@ -6,7 +6,9 @@ var Highlight = React.createClass({
   getDefaultProps: function () {
     return {
       innerHTML: false,
-      className: null
+      className: null,
+      codeStyle: null,
+      preStyle: null,
     };
   },
   componentDidMount: function () {
@@ -28,7 +30,7 @@ var Highlight = React.createClass({
     if (this.props.innerHTML) {
       return <div dangerouslySetInnerHTML={{__html: this.props.children}} className={this.props.className || null}></div>;
     } else {
-      return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
+      return <pre style={this.props.preStyle}><code className={this.props.className} style={this.props.codeStyle}>{this.props.children}</code></pre>;
     }
   }
 });
