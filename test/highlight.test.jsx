@@ -32,6 +32,24 @@ describe('highlight', function() {
     expect(ReactDOM.findDOMNode(text).textContent).toBe('Sometext');
   });
 
+  it('should accept a preStyle prop and apply the styles to the pre element', function() {
+    var preStyle = {backgroundColor: 'white'};
+    var text = ReactDOMServer.renderToStaticMarkup(
+        <Highlight preStyle={preStyle}>Some text</Highlight>
+      );
+
+    expect(text).toBe('<pre style="background-color:white;"><code>Some text</code></pre>');
+  });
+
+  it('should accept a codeStyle prop and apply the styles to the code element', function() {
+    var codeStyle = {backgroundColor: 'white'};
+    var text = ReactDOMServer.renderToStaticMarkup(
+        <Highlight codeStyle={codeStyle}>Some text</Highlight>
+      );
+
+    expect(text).toBe('<pre><code style="background-color:white;">Some text</code></pre>');
+  });
+
 });
 
 
