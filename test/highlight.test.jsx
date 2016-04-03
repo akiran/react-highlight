@@ -15,14 +15,14 @@ describe('highlight', function() {
     var text = ReactDOMServer.renderToStaticMarkup(
       <Highlight>Some text</Highlight>
     );
-    expect(text).toBe('<pre><code>Some text</code></pre>');
+    expect(text).toBe('<span><code>Some text</code></span>');
   });
 
   it('should assign className prop', function() {
     var text = ReactDOMServer.renderToStaticMarkup(
       <Highlight className='html'>Some text</Highlight>
     );
-    expect(text).toBe('<pre><code class="html">Some text</code></pre>');
+    expect(text).toBe('<span><code class="html">Some text</code></span>');
   });
 
   it('should accept innerHTML prop', function() {
