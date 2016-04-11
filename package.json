@@ -28,7 +28,6 @@
   "homepage": "https://github.com/akiran/react-highlight",
   "devDependencies": {
     "es5-shim": "^4.1.7",
-    "highlight.js": "^8.6.0",
     "html-loader": "^0.2.3",
     "jasmine-core": "^2.3.4",
     "jsx-loader": "^0.12.2",
@@ -46,7 +45,6 @@
     "node-libs-browser": "^0.5.2",
     "phantomjs": "^1.9.17",
     "raw-loader": "^0.5.1",
-    "react": "^0.14.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.6.6",
     "karma-jasmine": "^0.3.6",
