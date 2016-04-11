@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/akiran/react-highlight",
   "devDependencies": {
-    "autoprefixer-core": "^4.0.2",
     "babel": "^5.6.14",
     "babel-core": "^5.6.18",
     "babel-loader": "^5.3.1",
@@ -39,6 +38,7 @@
     "jasmine-core": "^2.3.4",
     "jsx-loader": "^0.12.2",
     "karma": "^0.13.3",
+    "autoprefixer": "^6.3.6",
     "karma-webpack": "^1.7.0",
     "markdown-loader": "^0.1.2",
     "multiline": "^1.0.1",
