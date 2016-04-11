@@ -45,7 +45,7 @@
     "markdown-loader": "^0.1.7",
     "multiline": "^1.0.2",
     "node-libs-browser": "^1.0.0",
-    "phantomjs": "^2.1.7",
+    "phantomjs-prebuilt": "^2.1.7",
     "raw-loader": "^0.5.1",
     "react-addons-test-utils": "^15.0.1",
     "webpack": "^1.12.15",
