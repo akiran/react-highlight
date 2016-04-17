@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "highlight.js": "^8.4.x",
-    "react": "^0.14.0",
-    "react-dom": "^0.14.0"
+    "react": "^0.14.0 || ^15.0.0",
+    "react-dom": "^0.14.0 || ^15.0.0"
   }
 }
