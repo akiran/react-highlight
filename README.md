@@ -6,7 +6,7 @@ React component for syntax highlighting using highlight.js
 ### Installation
 ```bash
   npm install react-highlight --save
-``` 
+```
 
 ### Usage
 #### Importing component
@@ -21,6 +21,11 @@ Choose the [theme](https://highlightjs.org/static/demo/) for syntax highlighting
 ```
 
 The styles will most likely be in `node_modules/highlight.js/styles` folder.
+
+Props:
+* className: custom class name
+* innerHTML: enable to render markup with dangerouslySetInnerHTML
+* element:  render code snippet inside specified element
 
 #### Syntax highlighting of single code snippet
 Code snippet that requires syntax highlighting should be passed as children to Highlight component in string format. Language name of code snippet should be specified as className.
@@ -39,6 +44,6 @@ This is especially usefull if html with multiple code snippets is generated from
 
 ```html
 <Highlight innerHTML={true}>
-  {"html with multiple code snippets"} 
+  {"html with multiple code snippets"}
 </Highlight>
 ```
