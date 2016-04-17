@@ -33,10 +33,24 @@ var Highlight = React.createClass({
     }
   },
   render: function () {
+    var Element = this.props.element ? React.DOM[this.props.element]: null;
+
     if (this.props.innerHTML) {
-      return <div dangerouslySetInnerHTML={{__html: this.props.children}} className={this.props.className || null}></div>;
+      if (!Element) {
+        Element = React.DOM.div
+      }
+      return Element({
+        dangerouslySetInnerHTML: {__html: this.props.children},
+        className: this.props.className || null
+      }, null);
     } else {
-      return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
+      if (Element) {
+        return Element({
+          className:this.props.className
+        }, this.props.children);
+      } else {
+        return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
+      }
     }
   }
 });

@@ -14,9 +14,9 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'node_modules/es5-shim/es5-shim.js',
-        'node_modules/react/dist/react-with-addons.js',
-        'test/**/*.jsx',
+      'node_modules/es5-shim/es5-shim.js',
+      'node_modules/react/dist/react-with-addons.js',
+      'test/**/*.js',
     ],
 
 
@@ -27,17 +27,20 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'test/**/*.jsx': ['webpack']
+        'test/**/*.js': ['webpack'],
     },
 
     webpack: {
         module: {
             loaders: [
-                {test: /\.(js|jsx)$/, loaders: ['babel']}
+                {test: /\.(js|jsx)$/, loaders: ['babel']},
             ]
         },
         externals: {
             react: 'React'
+        },
+        resolve: {
+          root: __dirname
         }
     },
     webpackServer: {
