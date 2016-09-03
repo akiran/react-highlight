@@ -1,6 +1,6 @@
 {
   "name": "react-highlight",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "React component for syntax highlighting",
   "main": "index.js",
   "scripts": {
@@ -37,7 +37,7 @@
     "eslint-plugin-react": "^4.3.0",
     "gulp": "^3.8.10",
     "gulp-ruby-sass": "^0.7.1",
-    "highlight.js": "^8.6.0",
+    "highlight.js": "^9.6.0",
     "html-loader": "^0.2.3",
     "jasmine-core": "^2.3.4",
     "jsx-loader": "^0.12.2",
@@ -56,7 +56,7 @@
     "webpack-dev-server": "^1.6.6"
   },
   "dependencies": {
-    "highlight.js": "^8.4.x",
+    "highlight.js": "^9.6.0",
     "react": "^0.14.0 || ^15.0.0",
     "react-dom": "^0.14.0 || ^15.0.0"
   }
