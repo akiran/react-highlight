@@ -7,6 +7,7 @@ var Highlight = React.createClass({
     return {
       innerHTML: false,
       className: null,
+      style: {},
       element: null,
     };
   },
@@ -40,9 +41,10 @@ var Highlight = React.createClass({
       if (Element) {
         return Element({
           className:this.props.className
+          style:this.props.style
         }, this.props.children);
       } else {
-        return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
+        return <pre><code className={this.props.className} style={this.props.style}>{this.props.children}</code></pre>;
       }
     }
   }
