@@ -1,59 +1,59 @@
-var hljs = require('highlight.js/lib/highlight');
-var React = require('react');
-var createReactClass = require('create-react-class');
-var ReactDOM = require('react-dom');
+import hljs from'highlight.js/lib/highlight';
+import React from'react';
+import ReactDOM from'react-dom';
 
-var Highlight = createReactClass({
-  getDefaultProps: function () {
-    return {
-      innerHTML: false,
-      className: '',
-      languages: []
-    };
-  },
-  componentDidMount: function () {
-    this.highlightCode();
-  },
-  componentDidUpdate: function () {
-    this.highlightCode();
-  },
-  highlightCode: function () {
-    var languages = this.props.languages;
-    if ((languages.length === 0) && this.props.className) {
-      languages.push(this.props.className);
+class Highlight extends React.Component {
+    componentDidMount() {
+        this.highlightCode();
     }
-    this.props.languages.forEach(function (lang) {
-      hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
-    });
-    var domNode = ReactDOM.findDOMNode(this);
-    var nodes = domNode.querySelectorAll('pre code');
-    if (nodes.length > 0) {
-      for (var i = 0; i < nodes.length; i=i+1) {
-        hljs.highlightBlock(nodes[i]);
-      }
-    }
-  },
-  render: function () {
-    var Element = this.props.element ? React.DOM[this.props.element]: null;
 
-    if (this.props.innerHTML) {
-      if (!Element) {
-        Element = React.DOM.div
-      }
-      return Element({
-        dangerouslySetInnerHTML: {__html: this.props.children},
-        className: this.props.className || null
-      }, null);
-    } else {
-      if (Element) {
-        return Element({
-          className:this.props.className
-        }, this.props.children);
-      } else {
-        return <pre><code className={this.props.className}>{this.props.children}</code></pre>;
-      }
+    componentDidUpdate() {
+        this.highlightCode();
     }
-  }
-});
 
-module.exports = Highlight;
+    highlightCode() {
+        const {className, languages} = this.props;
+        const domNode = ReactDOM.findDOMNode(this);
+        const nodes = domNode.querySelectorAll('pre code');
+
+        if ((languages.length === 0) && className) {
+            languages.push(className);
+        }
+
+        languages.forEach(lang => {
+            hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
+        });
+
+        let i;
+        for (i = 0; i < nodes.length; i++) {
+            hljs.highlightBlock(nodes[i]);
+        }
+    }
+
+    render() {
+        const {children, className, element, innerHTML} = this.props;
+        let Element = element ? React.DOM[element] : null;
+
+        if (innerHTML) {
+            if (!Element) {
+                Element = React.DOM.div
+            }
+
+            return Element({dangerouslySetInnerHTML: {__html: children}, className: className || null}, null);
+        } else {
+            if (Element) {
+                return Element({className}, children);
+            } else {
+                return <pre><code className={className}>{children}</code></pre>;
+            }
+        }
+    }
+}
+
+Highlight.defaultProps = {
+    innerHTML: false,
+    className: '',
+    languages: [],
+};
+
+export default Highlight;
