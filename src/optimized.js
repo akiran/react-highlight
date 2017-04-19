@@ -1,12 +1,13 @@
 var hljs = require('highlight.js/lib/highlight');
 var React = require('react');
+var createReactClass = require('create-react-class');
 var ReactDOM = require('react-dom');
 
-var Highlight = React.createClass({
+var Highlight = createReactClass({
   getDefaultProps: function () {
     return {
       innerHTML: false,
-      className: "",
+      className: '',
       languages: []
     };
   },
