@@ -1,6 +1,6 @@
 var Highlight = require('../src');
 var ReactDOM = require('react-dom');
-var TestUtils = require('react-addons-test-utils');
+var TestUtils = require('react-dom/test-utils');
 var ReactDOMServer = require('react-dom/server');
 describe('highlight', function() {
 
@@ -45,7 +45,4 @@ describe('highlight', function() {
     );
     expect(ReactDOM.findDOMNode(text).textContent).toBe('Sometext');
   });
-
-
-
 });
