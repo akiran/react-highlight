@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-var autoprefixer = require('autoprefixer-core');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: '#inline-source-map',
@@ -19,7 +19,7 @@ module.exports = {
       //   loader: "style!css!postcss!sass?outputStyle=expanded&includePaths[]=" + 
       //       (path.resolve(__dirname, './node_modules')) + "&includePaths[]=" + (path.resolve(__dirname, './bower_components'))
       // },
-      { test: /\.md$/, loader: "raw!markdown" },
+      { test: /\.md$/, loader: 'raw!markdown' },
     ],
   },
   postcss: [ autoprefixer({ browsers: ['last 2 version'] }) ],
