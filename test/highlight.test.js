@@ -46,7 +46,7 @@ describe('highlight', () => {
 
     it('should accept innerHTML prop', () => {
         const text = TestUtils.renderIntoDocument(
-            <Highlight innerHTML={true}>{"<div>Sometext</div>"}</Highlight>
+            <Highlight innerHTML={true}>{'<div>Sometext</div>'}</Highlight>
         );
 
         expect(ReactDOM.findDOMNode(text).textContent).toBe('Sometext');

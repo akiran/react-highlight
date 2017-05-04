@@ -1,17 +1,10 @@
-// var React = require('react');
-// var Router = require('react-router');
-// var routes = require('./routes');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Highlight from '../src/index';
 
-// Router.run(routes, function (Handler) {
-//   React.render(<Handler />, document.body);
-// });
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var Highlight = require('../src/index');
-
-var Docs = React.createClass({
-  render: function () {
+class Docs extends React.Component {
+  render() {
     return (
       <div>
         <Highlight>Some text</Highlight>
@@ -20,6 +13,7 @@ var Docs = React.createClass({
       </div>
     );
   }
-})
+}
+
 
 ReactDOM.render(<Docs />, document.getElementById('docs'));
