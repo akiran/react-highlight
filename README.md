@@ -36,7 +36,7 @@ Code snippet that requires syntax highlighting should be passed as children to H
 </Highlight>
 ```
 
-#### Syntax highlighting of mutiple code snippets
+#### Syntax highlighting of multiple code snippets
 Set `innerHTML=true` to highlight multiple code snippets at a time.
 This is especially usefull if html with multiple code snippets is generated from preprocesser tools like markdown.
 
@@ -46,4 +46,49 @@ This is especially usefull if html with multiple code snippets is generated from
 <Highlight innerHTML={true}>
   {"html with multiple code snippets"}
 </Highlight>
+```
+
+#### Advanced usage: selectively loading languages with Webpack
+
+##### appConfig.js
+
+```js
+// an array of languages supported by highlight.js
+const LANGUAGES = ['javascript', 'python']
+
+module.exports = {
+  LANGUAGES,
+}
+```
+
+##### webpack.config.js
+
+```js
+const config = require('path/to/config')
+
+module.exports = {
+  // ...
+  plugins: [
+    // ...
+    new webpack.ContextReplacementPlugin(
+      /highlight\.js\/lib\/languages/,
+      new RegExp(config.LANGUAGES.join('|'))
+    ),
+  ]
+}
+```
+
+##### component.js
+
+```js
+import Highlight from 'react-highlight/lib/optimized'
+import { LANGUAGES } from 'path/to/config'
+
+export const Component = (props) => {
+  return (
+    <Highlight innerHTML={true} languages={LANGUAGES}>
+      {props.children} {/* html with multiple code snippets */}
+    </Highlight>    
+  )
+}
 ```
