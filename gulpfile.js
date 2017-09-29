@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var webpack = require('webpack');
 var WebpackDevServer = require('webpack-dev-server');
 
@@ -9,15 +9,14 @@ gulp.task('copy', function () {
 });
 
 gulp.task('sass', function () {
-  return  gulp.src(['./docs/**/*.scss'])
-              .pipe(sass({ loadPath : ['bower_components', 'node_modules'],}))
-               .on('error', function (err) { console.log(err.message); })
-              .pipe(gulp.dest('./build'));
+    return gulp.src('./docs/**/*.scss')
+      .pipe(sass({ loadPath : ['bower_components', 'node_modules'],}).on('error', sass.logError))
+      .pipe(gulp.dest('./build'));
 });
 
 gulp.task('server', ['copy', 'sass'], function (callback) {
   var myConfig = require('./webpack.config.js');
-  
+
   var webpackCompiler = webpack(myConfig, function(err, stats) {
   });
 
