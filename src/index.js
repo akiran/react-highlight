@@ -12,7 +12,10 @@ class Highlight extends React.Component {
 
     highlightCode() {
         const nodes = this.el.querySelectorAll('pre code');
-        nodes.forEach((node) => hljs.highlightBlock(node));
+
+        for (let i = 0; i < nodes.length; i++) {
+            hljs.highlightBlock(nodes[i])
+        }
     }
 
     setEl = (el) => {

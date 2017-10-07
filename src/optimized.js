@@ -22,7 +22,9 @@ class Highlight extends React.Component {
             hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
         });
 
-        nodes.forEach((node) => hljs.highlightBlock(node));
+        for (let i = 0; i < nodes.length; i++) {
+            hljs.highlightBlock(nodes[i])
+        }
     }
 
     setEl = (el) => {
