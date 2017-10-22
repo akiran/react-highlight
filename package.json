@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp server",
-    "prepublish": "babel ./src --out-dir ./lib --plugins=transform-class-properties,transform-react-jsx --preset=env",
+    "prepublish": "babel ./src --out-dir ./lib --plugins=transform-class-properties,transform-react-jsx --presets=env",
     "test": "karma start --single-run",
     "dev-test": "karma start"
   },
