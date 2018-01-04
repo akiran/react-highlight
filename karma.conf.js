@@ -32,15 +32,27 @@ module.exports = function(config) {
 
     webpack: {
         module: {
-            loaders: [
-                {test: /\.(js|jsx)$/, loaders: ['babel']},
-            ]
+          rules: [
+            {
+              test: /\.(js|jsx)$/,
+              use: {
+                loader: 'babel-loader',
+                options: {
+                  presets: ['env'],
+                  plugins: [
+                    'transform-class-properties',
+                    'transform-react-jsx',
+                  ],
+                },
+              },
+            },
+          ],
         },
         externals: {
             react: 'React'
         },
         resolve: {
-          root: __dirname
+          modules: [__dirname, 'node_modules']
         }
     },
     webpackServer: {
