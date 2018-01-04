@@ -50,6 +50,4 @@ This is especially usefull if html with multiple code snippets is generated from
 
 ### Sponsor
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/8Wa5rFgnuaoyA8ryN2LAAqgu/akiran/react-highlight'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/8Wa5rFgnuaoyA8ryN2LAAqgu/akiran/react-highlight.svg' />
-</a>
+
