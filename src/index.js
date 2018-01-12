@@ -1,6 +1,7 @@
 import hljs from 'highlight.js';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import DOM from 'react-dom-factories';
 
 class Highlight extends React.Component {
     componentDidMount() {
@@ -23,11 +24,11 @@ class Highlight extends React.Component {
 
     render() {
         const {children, className, element, innerHTML} = this.props;
-        let Element = element ? React.DOM[element] : null;
+        let Element = element ? DOM[element] : null;
 
         if (innerHTML) {
             if (!Element) {
-                Element = React.DOM.div
+                Element = DOM.div
             }
 
             return Element({dangerouslySetInnerHTML: {__html: children}, className: className || null}, null);
