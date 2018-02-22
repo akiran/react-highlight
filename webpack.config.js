@@ -1,6 +1,6 @@
-var webpack = require('webpack');
-var path = require('path');
-var autoprefixer = require('autoprefixer');
+let webpack = require('webpack');
+let path = require('path');
+let autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: '#inline-source-map',
@@ -12,22 +12,41 @@ module.exports = {
     filename: '[name]',
   },
   module: {
-    loaders: [
-      {test: /\.(js|jsx)$/, loaders: ['babel']},
-      // {
-      //   test: /\.scss$/,
-      //   loader: "style!css!postcss!sass?outputStyle=expanded&includePaths[]=" + 
-      //       (path.resolve(__dirname, './node_modules')) + "&includePaths[]=" + (path.resolve(__dirname, './bower_components'))
-      // },
-      { test: /\.md$/, loader: 'raw!markdown' },
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+          }
+        ]
+      },
+      {
+        test: /\.md$/,
+        loader: 'raw!markdown'
+      },
+      {
+        test: /\.css/,
+        use: [
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins() {
+                return [
+                  autoprefixer({ browsers: ['last 2 version']})
+                ];
+              }
+            }
+          }
+        ]
+      },
     ],
   },
-  postcss: [ autoprefixer({ browsers: ['last 2 version'] }) ],
   resolve : {
     alias: {
-
     },
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

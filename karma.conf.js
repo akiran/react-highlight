@@ -1,7 +1,5 @@
-// Karma configuration
-// Generated on Sun Jul 12 2015 14:29:28 GMT+0530 (IST)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     basePath: '',
@@ -14,34 +12,47 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'node_modules/es5-shim/es5-shim.js',
       'node_modules/react/dist/react-with-addons.js',
       'test/**/*.js',
     ],
 
 
-    exclude: [
-    ],
+    exclude: [],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-        'test/**/*.js': ['webpack'],
+      'test/**/*.js': ['webpack'],
+    },
+
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox']
+      }
     },
 
     webpack: {
-        module: {
-            loaders: [
-                {test: /\.(js|jsx)$/, loaders: ['babel']},
-            ]
-        },
-        externals: {
-            react: 'React'
-        },
-        resolve: {
-          root: __dirname
-        }
+      module: {
+        rules: [
+          {
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            use: [
+              {
+                loader: 'babel-loader'
+              }
+            ],
+          }
+        ]
+      },
+      externals: {
+        react: 'React'
+      },
+      resolve: {
+        modules: [__dirname, 'node_modules']
+      }
     },
     webpackServer: {
       quiet: true,
@@ -74,7 +85,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: process.env.TRAVIS ? ['Chrome_travis_ci'] : ['Chrome'],
 
 
     // Continuous Integration mode

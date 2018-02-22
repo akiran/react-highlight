@@ -1,7 +1,7 @@
-var gulp = require('gulp');
-var sass = require('gulp-ruby-sass');
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
+let gulp = require('gulp');
+let sass = require('gulp-ruby-sass');
+let webpack = require('webpack');
+let WebpackDevServer = require('webpack-dev-server');
 
 gulp.task('copy', function () {
   gulp.src('./docs/index.html')
@@ -9,24 +9,24 @@ gulp.task('copy', function () {
 });
 
 gulp.task('sass', function () {
-  return  gulp.src(['./docs/**/*.scss'])
-              .pipe(sass({ loadPath : ['bower_components', 'node_modules'],}))
-               .on('error', function (err) { console.log(err.message); })
-              .pipe(gulp.dest('./build'));
+  return sass(['./docs/**/*.scss'], {loadPath: ['bower_components', 'node_modules']})
+    .on('error', function (err) {
+      console.error(err.message);
+    })
+    .pipe(gulp.dest('./build'));
 });
 
 gulp.task('server', ['copy', 'sass'], function (callback) {
-  var myConfig = require('./webpack.config.js');
-  
-  var webpackCompiler = webpack(myConfig, function(err, stats) {
+  let myConfig = require('./webpack.config.js');
+
+  let webpackCompiler = webpack(myConfig, function (err, stats) {
   });
 
   new WebpackDevServer(webpackCompiler, {
     contentBase: './build',
-    hot: true,
-    debug: true
+    hot: true
   }).listen(8000, 'localhost', function (err, result) {
-    
+
   });
 });
 

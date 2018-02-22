@@ -11,7 +11,7 @@ React component for syntax highlighting using highlight.js
 ### Usage
 #### Importing component
 ```js
-  var Highlight = require('react-highlight');
+  let Highlight = require('react-highlight');
 ```
 
 #### Adding styles
