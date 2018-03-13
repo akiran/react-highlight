@@ -1,6 +1,5 @@
 import hljs from 'highlight.js';
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Highlight extends React.Component {
     componentDidMount() {
@@ -12,32 +11,33 @@ class Highlight extends React.Component {
     }
 
     highlightCode() {
-        const domNode = ReactDOM.findDOMNode(this);
-        const nodes = domNode.querySelectorAll('pre code');
+        const nodes = this.el.querySelectorAll('pre code');
 
-        let i;
-        for (i = 0; i < nodes.length; i++) {
-            hljs.highlightBlock(nodes[i]);
+        for (let i = 0; i < nodes.length; i++) {
+            hljs.highlightBlock(nodes[i])
         }
     }
 
+    setEl = (el) => {
+        this.el = el;
+    };
+
     render() {
-        const {children, className, element, innerHTML} = this.props;
-        let Element = element ? React.DOM[element] : null;
+        const {children, className, element: Element, innerHTML} = this.props;
+        const props = { ref: this.setEl, className };
 
         if (innerHTML) {
-            if (!Element) {
-                Element = React.DOM.div
-            }
-
-            return Element({dangerouslySetInnerHTML: {__html: children}, className: className || null}, null);
-        } else {
+            props.dangerouslySetInnerHTML = { __html: children };
             if (Element) {
-                return Element({className}, children);
-            } else {
-                return <pre><code className={className}>{children}</code></pre>;
+                return <Element {...props} />;
             }
+            return <div {...props} />;
         }
+
+        if (Element) {
+            return <Element {...props}>{children}</Element>;
+        }
+        return <pre ref={this.setEl}><code className={className}>{children}</code></pre>;
     }
 }
 

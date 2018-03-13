@@ -29,3 +29,4 @@ node_modules
 .sass-cache
 build
 lib
+package-lock.json
