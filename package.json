@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp server",
-    "prepublish": "babel ./src --out-dir ./lib",
+    "prepublish": "babel ./src --out-dir ./lib --plugins=transform-class-properties,transform-react-jsx --presets=env",
     "test": "karma start --single-run",
     "dev-test": "karma start"
   },
@@ -27,16 +27,17 @@
   },
   "homepage": "https://github.com/akiran/react-highlight",
   "dependencies": {
-    "highlight.js": "^9.11.0",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "highlight.js": "^9.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
-    "babel": "^5.8.38",
-    "babel-core": "^5.8.38",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
     "babel-eslint": "^6.1.2",
-    "babel-loader": "^5.4.2",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
     "es5-shim": "^4.5.9",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
@@ -54,7 +55,13 @@
     "node-libs-browser": "^2.0.0",
     "phantomjs-prebuilt": "^2.1.14",
     "raw-loader": "^0.5.1",
-    "webpack": "^1.15.0",
-    "webpack-dev-server": "^1.16.3"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "peerDependencies": {
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
   }
 }
