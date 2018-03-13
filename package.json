@@ -4,8 +4,8 @@
   "description": "React component for syntax highlighting",
   "main": "index.js",
   "scripts": {
-    "start": "gulp server",
-    "prepublish": "babel ./src --out-dir ./lib --plugins=transform-class-properties,transform-react-jsx --presets=env",
+    "prepublish":
+      "babel ./src --out-dir ./lib --plugins=transform-class-properties,transform-react-jsx --presets=env",
     "test": "karma start --single-run",
     "dev-test": "karma start"
   },
@@ -41,8 +41,6 @@
     "es5-shim": "^4.5.9",
     "eslint": "^3.19.0",
     "eslint-plugin-react": "^6.10.3",
-    "gulp": "^3.9.1",
-    "gulp-ruby-sass": "^2.1.1",
     "html-loader": "^0.4.5",
     "jasmine-core": "^2.5.2",
     "jsx-loader": "^0.13.2",
