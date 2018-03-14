@@ -1,21 +1,35 @@
 # react-highlight
+
 React component for syntax highlighting using highlight.js
 
 ![Build Status](https://travis-ci.org/akiran/react-highlight.svg?branch=master)
 
+### Latest version
+
+`0.11.1`
+
+### CodeSandbox Example
+
+[![Edit new](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/5kz6kyprxp)
+
 ### Installation
+
 ```bash
   npm install react-highlight --save
 ```
 
 ### Usage
+
 #### Importing component
+
 ```js
-  var Highlight = require('react-highlight');
+var Highlight = require('react-highlight')
 ```
 
 #### Adding styles
+
 Choose the [theme](https://highlightjs.org/static/demo/) for syntax highlighting and add corresponding styles of highlight.js
+
 ```css
   <link rel="stylesheet" href="/path/to/styles/theme-name.css">
 ```
@@ -23,11 +37,13 @@ Choose the [theme](https://highlightjs.org/static/demo/) for syntax highlighting
 The styles will most likely be in `node_modules/highlight.js/styles` folder.
 
 Props:
+
 * className: custom class name
 * innerHTML: enable to render markup with dangerouslySetInnerHTML
-* element:  render code snippet inside specified element
+* element: render code snippet inside specified element
 
 #### Syntax highlighting of single code snippet
+
 Code snippet that requires syntax highlighting should be passed as children to Highlight component in string format. Language name of code snippet should be specified as className.
 
 ```html
@@ -37,6 +53,7 @@ Code snippet that requires syntax highlighting should be passed as children to H
 ```
 
 #### Syntax highlighting of mutiple code snippets
+
 Set `innerHTML=true` to highlight multiple code snippets at a time.
 This is especially usefull if html with multiple code snippets is generated from preprocesser tools like markdown.
 
@@ -47,7 +64,3 @@ This is especially usefull if html with multiple code snippets is generated from
   {"html with multiple code snippets"}
 </Highlight>
 ```
-
-### Sponsor
-
-
