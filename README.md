@@ -23,7 +23,7 @@ React component for syntax highlighting using highlight.js
 #### Importing component
 
 ```js
-var Highlight = require('react-highlight')
+const Highlight = require('react-highlight')
 ```
 
 #### Adding styles
