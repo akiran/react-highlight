@@ -8,6 +8,8 @@ React component for syntax highlighting using highlight.js
 
 `0.11.1`
 
+## [Documentation](https://react-highlight.neostack.com/)
+
 ### CodeSandbox Example
 
 [![Edit new](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/5kz6kyprxp)
