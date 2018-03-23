@@ -2,6 +2,10 @@ import hljs from 'highlight.js';
 import React from 'react';
 
 class Highlight extends React.Component {
+    constructor(props) {
+      super(props)
+      this.setEl = this.setEl.bind(this)
+    }
     componentDidMount() {
         this.highlightCode();
     }
@@ -18,7 +22,7 @@ class Highlight extends React.Component {
         }
     }
 
-    setEl = (el) => {
+    setEl(el) {
         this.el = el;
     };
 
