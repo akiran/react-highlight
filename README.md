@@ -1,6 +1,6 @@
 # react-highlight
 
-React component for syntax highlighting using highlight.js
+React component for syntax highlighting using [highlight.js](https://github.com/highlightjs/highlight.js)
 
 ![Build Status](https://travis-ci.org/akiran/react-highlight.svg?branch=master)
 
@@ -66,3 +66,7 @@ This is especially usefull if html with multiple code snippets is generated from
   {"html with multiple code snippets"}
 </Highlight>
 ```
+
+### Adding Additional Language Support
+
+All language highlighting support comes from [highlight.js](https://github.com/highlightjs/highlight.js). Changes must be merged and released there before they are supported in react-highlight. When a new highlight.js version has been released, submit a PR or issue to bump the dependency version.
