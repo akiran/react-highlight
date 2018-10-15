@@ -1,6 +1,6 @@
 {
-  "name": "react-highlight",
-  "version": "0.12.0",
+  "name": "mooreaw/react-highlight",
+  "version": "0.12.1",
   "description": "React component for syntax highlighting",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/akiran/react-highlight.git"
+    "url": "https://github.com/drewmoore/react-highlight.git"
   },
   "keywords": [
     "react",
@@ -18,14 +18,14 @@
     "highlighting",
     "react-component"
   ],
-  "author": "Kiran Abburi",
+  "author": "Andrew Moore",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/akiran/react-highlight/issues"
+    "url": "https://github.com/drewmoore/react-highlight/issues"
   },
-  "homepage": "https://github.com/akiran/react-highlight",
+  "homepage": "https://github.com/drewmoore/react-highlight",
   "dependencies": {
-    "highlight.js": "^9.11.0"
+    "highlight.js": "9.11.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.7",
