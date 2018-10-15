@@ -1,5 +1,5 @@
 {
-  "name": "react-highlight",
+  "name": "mooreaw/react-highlight",
   "version": "0.12.1",
   "description": "React component for syntax highlighting",
   "main": "index.js",
@@ -18,7 +18,7 @@
     "highlighting",
     "react-component"
   ],
-  "author": "Kiran Abburi",
+  "author": "Andrew Moore",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/drewmoore/react-highlight/issues"
