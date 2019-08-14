@@ -1,59 +1,34 @@
-import hljs from'highlight.js/lib/highlight';
-import React from'react';
+import hljs from 'highlight.js';
+import React, {memo, useEffect, useRef} from 'react';
 
-class Highlight extends React.Component {
-    componentDidMount() {
-        this.highlightCode();
+function Highlight (props) {
+  const {children, element: Element, innerHTML} = props;
+  const className = props.className || '';
+  const languages = props.languages || [];
+  const el = useRef(null);
+
+  const highlightCode = () => {
+    if (el.current) {
+      if ((languages.length === 0) && className) languages.push(className);
+      languages.forEach(lang => hljs.registerLanguage(
+        lang,
+        require('highlight.js/lib/languages/' + lang)
+      ));
+      const nodes = el.current.querySelectorAll('pre code');
+      for (let i = 0; i < nodes.length; i++) hljs.highlightBlock(nodes[i]);
     }
+  };
 
-    componentDidUpdate() {
-        this.highlightCode();
-    }
+  useEffect(highlightCode);
+  const elProps = {ref: el, className};
 
-    highlightCode() {
-        const {className, languages} = this.props;
-        const nodes = this.el.querySelectorAll('pre code');
-
-        if ((languages.length === 0) && className) {
-            languages.push(className);
-        }
-
-        languages.forEach(lang => {
-            hljs.registerLanguage(lang, require('highlight.js/lib/languages/' + lang));
-        });
-
-        for (let i = 0; i < nodes.length; i++) {
-            hljs.highlightBlock(nodes[i])
-        }
-    }
-
-    setEl = (el) => {
-        this.el = el;
-    };
-
-    render() {
-        const {children, className, element: Element, innerHTML} = this.props;
-        const props = { ref: this.setEl, className };
-
-        if (innerHTML) {
-            props.dangerouslySetInnerHTML = { __html: children };
-            if (Element) {
-                return <Element {...props} />;
-            }
-            return <div {...props} />;
-        }
-
-        if (Element) {
-            return <Element {...props}>{children}</Element>;
-        }
-        return <pre ref={this.setEl}><code className={className}>{children}</code></pre>;
-    }
+  if (innerHTML) {
+    elProps.dangerouslySetInnerHTML = {__html: children};
+    if (Element) return <Element {...elProps} />;
+    return <div {...elProps} />;
+  }
+  if (Element) return <Element {...elProps}>{children}</Element>;
+  return <pre ref={el}><code className={className}>{children}</code></pre>;
 }
 
-Highlight.defaultProps = {
-    innerHTML: false,
-    className: '',
-    languages: [],
-};
-
-export default Highlight;
+export default memo(Highlight);
