@@ -1,7 +1,7 @@
 import hljs from'highlight.js/lib/highlight';
 import React from'react';
 
-class Highlight extends React.Component {
+class Highlight extends React.PureComponent {
     componentDidMount() {
         this.highlightCode();
     }
