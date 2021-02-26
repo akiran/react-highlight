@@ -48,7 +48,7 @@ Props:
 
 Code snippet that requires syntax highlighting should be passed as children to Highlight component in string format. Language name of code snippet should be specified as className.
 
-```html
+```jsx
 <Highlight className='language-name-of-snippet'>
   {"code snippet to be highlighted"}
 </Highlight>
@@ -61,7 +61,7 @@ This is especially usefull if html with multiple code snippets is generated from
 
 **Warning:** If innerHTML is set to true, make sure the html generated with code snippets is from trusted source.
 
-```html
+```jsx
 <Highlight innerHTML={true}>
   {"html with multiple code snippets"}
 </Highlight>
