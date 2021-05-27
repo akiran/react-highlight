@@ -18,7 +18,7 @@ class Highlight extends React.Component {
         const nodes = this.el.querySelectorAll('pre code');
 
         for (let i = 0; i < nodes.length; i++) {
-            hljs.highlightBlock(nodes[i])
+            hljs.highlightElement(nodes[i]);
         }
     }
 

@@ -23,7 +23,7 @@ class Highlight extends React.Component {
         });
 
         for (let i = 0; i < nodes.length; i++) {
-            hljs.highlightBlock(nodes[i])
+            hljs.highlightElement(nodes[i])
         }
     }
 
