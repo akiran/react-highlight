@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 import Highlight from '../src'
 import ReactDOM from 'react-dom'
 import TestUtils from 'react-dom/test-utils'
