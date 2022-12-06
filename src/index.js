@@ -1,7 +1,7 @@
 import hljs from 'highlight.js';
 import React from 'react';
 
-class Highlight extends React.Component {
+class Highlight extends React.PureComponent {
     constructor(props) {
       super(props)
       this.setEl = this.setEl.bind(this)
